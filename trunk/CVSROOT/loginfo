@@ -24,4 +24,6 @@
 #DEFAULT (echo ""; id; echo %s; date; cat) >> $CVSROOT/CVSROOT/commitlog
 # or
 #DEFAULT (echo ""; id; echo %{sVv}; date; cat) >> $CVSROOT/CVSROOT/commitlog
-ALL /cvsroot/devcounter/CVSROOT/cvs_loginfo.sh "%{sVv}" "$USER" devcounter http://cvs.berlios.de/cgi-bin/cvsweb.cgi/
+#ALL /usr/local/bin/log.pl %s -f $CVSROOT/CVSROOT/commitlog -m devcounter-devel@lists.berlios.de
+#ALL /usr/local/bin/syncmail.pl %{sVv} devcounter-devel@lists.berlios.de
+ALL /usr/local/bin/syncmail %{sVv} devcounter-devel@lists.berlios.de
